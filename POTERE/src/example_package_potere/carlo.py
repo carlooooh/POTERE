@@ -1,0 +1,1 @@
+print("POTERE STA NASCENDO")
