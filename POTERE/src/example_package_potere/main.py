@@ -4,8 +4,11 @@ import face_recognition
 import cv2
 import numpy as np
 import math
-import json
-
+import time
+import HUB
+from tkinter import *
+from tkinter import *
+from tkinter import ttk
 
 
 
@@ -32,7 +35,7 @@ class FaceRecognition:
 
     def __init__(self):
         self.encode_faces()
-
+    
     
     def encode_faces(self):
         for image in os.listdir('./POTERE/CAMERE/GALILEO'):
@@ -45,11 +48,13 @@ class FaceRecognition:
     
     def run_recognition(self):
         video_capture = cv2.VideoCapture(0)
+        start_time = time.time()
 
         if not video_capture.isOpened():
-            sys.exit('Video source not found...')
+            sys.exit('Impossibile aprire la webcam')
 
         while True:
+            accesso =1
             ret, frame = video_capture.read()
 
             # Only process every other frame of video to save time
@@ -68,7 +73,7 @@ class FaceRecognition:
                 for face_encoding in self.face_encodings:
                     # See if the face is a match for the known face(s)
                     matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding)
-                    name = "Unknown"
+                    name = "Strunzzz"
                     confidence = '???'
 
                     # Calculate the shortest distance to face
@@ -78,9 +83,10 @@ class FaceRecognition:
                     if matches[best_match_index]:
                         name = self.known_face_names[best_match_index]
                         confidence = face_confidence(face_distances[best_match_index])
+                        accesso = 2
 
                     self.face_names.append(f'{name} ({confidence})')
-
+        
             self.process_current_frame = not self.process_current_frame
 
             # Display the results
@@ -97,15 +103,25 @@ class FaceRecognition:
                 cv2.putText(frame, name, (left + 6, bottom - 6), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 255, 255), 1)
 
             # Display the resulting image
-            cv2.imshow('POTERE', frame)
+            cv2.imshow('POTERE - AUTENTIFICAZIONE', frame)
+
+            tempo_trascorso= time.time() - start_time
+
+            if accesso == 2 and tempo_trascorso>7:
+                if accesso == 2:
+                    break
+            
 
             # Hit 'q' on the keyboard to quit!
             if cv2.waitKey(1) == ord('q'):
                 break
-
+        
         # Release handle to the webcam
-        video_capture.release()
-        cv2.destroyAllWindows()
+        if accesso==2:
+            video_capture.release()
+            cv2.destroyAllWindows()
+            HUB.run_hub()
+
 
 if __name__ == '__main__':
     fr = FaceRecognition()
