@@ -51,7 +51,7 @@ class FaceRecognition:
   #test      print(self.known_face_names)
     
 
-    def autentificazione_vision(self):
+    def autentificazione(self):
         video_capture = cv2.VideoCapture(0)
         start_time = time.time()
 
@@ -133,5 +133,5 @@ class FaceRecognition:
 
 if __name__ == '__main__':
     fr = FaceRecognition()
-    fr.autentificazione_vision()
+    fr.autentificazione()
 
