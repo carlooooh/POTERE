@@ -27,7 +27,7 @@ def run_hub():
     buttonVision = ttk.Button(root, text="VISION")
 
     def assistente():
-        run_voice()
+        WINSTON.Avvio()
 
     buttonVoce = ttk.Button(root, text="WINSTON", command=lambda: threading.Thread(target=assistente).start())
 
