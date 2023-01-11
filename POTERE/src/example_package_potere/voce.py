@@ -31,7 +31,7 @@ class WINSTON():
         x =  sr.Recognizer()
 
         with sr.Microphone() as source:
-            comando = x.listen(source, timeout=4, phrase_time_limit=5)
+            comando = x.listen(source, phrase_time_limit=5)
         
             try:
                 richiesta = x.recognize_google(comando, language= 'it-IT')
@@ -100,7 +100,7 @@ class WINSTON():
                 
             elif "resta in ascolto" or "fatto" in richiesta:
                 break
-            
+
     root.mainloop()
 
 
