@@ -9,11 +9,11 @@ import pygame
 import threading
  
 
-class WINSTON():
+class SKYLER():
 
     root = Tk()
     root.geometry(f"300x50+1700+800")
-    root.title("WINSTON")
+    root.title("SKYLER")
 
     engine = init("espeak")
     voices = engine.getProperty('voices')
@@ -22,8 +22,8 @@ class WINSTON():
     
     #voce di POTERE
     def voce(audio):
-        WINSTON.engine.say(audio)
-        WINSTON.engine.runAndWait()
+        SKYLER.engine.say(audio)
+        SKYLER.engine.runAndWait()
 
 
     #input per il riconoscimento testuate del comando (da voce a testo)
@@ -38,7 +38,7 @@ class WINSTON():
             
         
             except Exception as e:
-                WINSTON.voce("Ripeti comando")
+                SKYLER.voce("Ripeti comando")
                 return "niente"
 
         return richiesta
@@ -49,45 +49,45 @@ class WINSTON():
         ora = int(datetime.datetime.now().hour)
 
         if ora>=0 and ora<5:
-            WINSTON.voce("trasformiamo le idee in progetti")
+            SKYLER.voce("trasformiamo le idee in progetti")
 
         elif ora>=5 and ora<=7:
-            WINSTON.voce("il mattino ha l'oro in bocca e noi siamo pronti")
+            SKYLER.voce("il mattino ha l'oro in bocca e noi siamo pronti")
 
         elif ora>7 and ora<=9:
-            WINSTON.voce("affrontiamo la giornata insieme, valuta i tuoi impegni")
+            SKYLER.voce("affrontiamo la giornata insieme, valuta i tuoi impegni")
         
         elif ora>9 and ora<13:
-            WINSTON.voce("siamo pronti per realizzare qualsiasi idea")
+            SKYLER.voce("siamo pronti per realizzare qualsiasi idea")
 
         elif ora>=13 and ora<=15:
-            WINSTON.voce("siamo quello che mangiamo")
+            SKYLER.voce("siamo quello che mangiamo")
         
         elif ora>15:
-            WINSTON.voce("siamo pronti per realizzare qualsiasi idea")
+            SKYLER.voce("siamo pronti per realizzare qualsiasi idea")
         
     def Avvio():
         while True:
-            permission = WINSTON.comandi_vocali()
+            permission = SKYLER.comandi_vocali()
             if("attivati" in permission) or ("mi servi" in permission):
-                WINSTON.run_winston()
+                SKYLER.run_winston()
             elif ("disattivati" in permission):
-                WINSTON.root.destroy()
+                SKYLER.root.destroy()
 
 
         #esecuzioni comandi vocali
     def run_winston():
         c = 2
-        WINSTON.benvenuto()
+        SKYLER.benvenuto()
         while True:
-            richiesta=WINSTON.comandi_vocali()
+            richiesta=SKYLER.comandi_vocali()
 
             if "test" in richiesta:
-                WINSTON.voce("Okay ho appreso il funzionamento delle richieste")
+                SKYLER.voce("Okay ho appreso il funzionamento delle richieste")
                 
             
             elif "presentati" in richiesta:
-                WINSTON.voce("siamo pronti")
+                SKYLER.voce("siamo pronti")
                 #os.system(f'xdg-open "./PRESENTAZIONE/colonna-sonora.mp3"')
 
                 def musica():
