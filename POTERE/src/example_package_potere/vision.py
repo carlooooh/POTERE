@@ -9,8 +9,20 @@ import os,sys
 import face_recognition
 import cv2
 import numpy as np
-import threading
+import math
 
+
+#semplice alcoritmo per calcolare la percentuale di accuratezza
+def accuratezza(face_distance, face_match_threshold=0.6):
+    range=(1.0 - face_match_threshold)
+    linear_val=(1.0-face_distance) / (range * 2.0)  
+     
+    if face_distance > face_match_threshold:
+        return str(round(linear_val * 100, 2)) + '%'
+
+    else:
+        value = (linear_val + ((1.0 - linear_val) * math.pow((linear_val -0.5) * 2, 0.2))) * 100
+        return str(round(value, 2)) + '%'
 
 
 
@@ -30,8 +42,8 @@ class FaceRecognition2:
 
     
     def encode_faces(self):
-        for image in os.listdir('./POTERE/CAMERE/GALILEO'):
-            face_image = face_recognition.load_image_file(f"./POTERE/CAMERE/GALILEO/{image}")
+        for image in os.listdir('./CAMERE/GALILEO'):
+            face_image = face_recognition.load_image_file(f"./CAMERE/GALILEO/{image}")
             face_encoding = face_recognition.face_encodings(face_image)[0]
 
             self.known_face_encodings.append(face_encoding)
@@ -40,18 +52,17 @@ class FaceRecognition2:
     
 
     def run_recognition(self):
-        
         video_capture = cv2.VideoCapture(0)
 
         if not video_capture.isOpened():
-            sys.exit('Video source not found...')
+            sys.exit('Webcam non rilevata')
         
 
         while True:
+            ret,frame = video_capture.read()
             
-            ret, frame = video_capture.read()
 
-            
+
             if self.process_current_frame:
             
                 small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
@@ -96,22 +107,20 @@ class FaceRecognition2:
                 cv2.putText(frame, name, (left + 6, bottom - 6), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 255, 255), 1)
             
             cv2.imshow('POTERE', frame)
+            
 
-            if cv2.waitKay(1) == ord('q'):
+            if cv2.waitKey(1) == ord('q'):
                 break
         
         video_capture.release()
         cv2.destroyAllWindows()
-                
-                
-            
-def avvio():
 
-    def run():
-        fr=FaceRecognition2()
-        fr.run_recognition()
+if __name__ == '__main__':
+    fr = FaceRecognition2()
+    fr.run_recognition()                
+            
     
-    threading.Thread(target=run).start()
+ 
     
     
 

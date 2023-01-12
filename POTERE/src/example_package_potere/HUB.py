@@ -6,7 +6,7 @@ from voce import *
 from PALAZZO import *
 from vision import *
 import threading
-
+import subprocess
 
 
 
@@ -26,15 +26,16 @@ def run_hub():
     buttonPalazzoMentale = ttk.Button(root, text="PALAZZO",  command=lambda: threading.Thread(target=palazzo).start())
 
     def vision():
-        avvio()
-        root.destroy()
+        os.chdir("./POTERE/src/example_package_potere")
+        subprocess.run(["python", "vision.py"])
+        
         
     buttonVision = ttk.Button(root, text="VISION", command=lambda: threading.Thread(target=vision).start())
 
     def assistente():
-        WINSTON.Avvio()
+        SKYLER.Avvio()
 
-    buttonVoce = ttk.Button(root, text="WINSTON", command=lambda: threading.Thread(target=assistente).start())
+    buttonVoce = ttk.Button(root, text="SKYLER", command=lambda: threading.Thread(target=assistente).start())
 
     buttonPalazzoMentale.grid(row=0, column=1)
     buttonVoce.grid(row=0, column=5)

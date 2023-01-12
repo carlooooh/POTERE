@@ -42,8 +42,8 @@ class FaceRecognition:
     
     #codifica dell'immagine in un numpy array
     def encode_faces(self):
-        for image in os.listdir('./POTERE/CAMERE/GALILEO'):
-            face_image = face_recognition.load_image_file(f"./POTERE/CAMERE/GALILEO/{image}")
+        for image in os.listdir('./POTERE/PROPRIETARIO'):
+            face_image = face_recognition.load_image_file(f"./POTERE/PROPRIETARIO/{image}")
             face_encoding = face_recognition.face_encodings(face_image)[0]
 
             self.known_face_encodings.append(face_encoding)
