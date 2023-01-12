@@ -1,0 +1,26 @@
+<annotation>
+	<folder>rock</folder>
+	<filename>rock02.jpeg</filename>
+	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/rock/rock02.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>721</width>
+		<height>1600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rock</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>75</xmin>
+			<ymin>425</ymin>
+			<xmax>622</xmax>
+			<ymax>753</ymax>
+		</bndbox>
+	</object>
+</annotation>

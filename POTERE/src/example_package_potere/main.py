@@ -29,7 +29,7 @@ def accuratezza(face_distance, face_match_threshold=0.6):
 #algoritmo che utilizza il modulo face_recognition per riconoscere e autentificare il proprietario del PALAZZO MENTALE ARTIFICIALE 
 
 class FaceRecognition:
-    face_loction = []
+    face_location = []
     face_encodings= []
     face_name=[]
     known_face_encodings = []

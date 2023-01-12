@@ -4,12 +4,13 @@ from tkinter import *
 from tkinter import ttk
 from voce import *
 from PALAZZO import *
+from vision import *
 import threading
 
 
 
-def run_hub():
 
+def run_hub():
 
     root = Tk()
 
@@ -24,7 +25,11 @@ def run_hub():
 
     buttonPalazzoMentale = ttk.Button(root, text="PALAZZO",  command=lambda: threading.Thread(target=palazzo).start())
 
-    buttonVision = ttk.Button(root, text="VISION")
+    def vision():
+        avvio()
+        root.destroy()
+        
+    buttonVision = ttk.Button(root, text="VISION", command=lambda: threading.Thread(target=vision).start())
 
     def assistente():
         WINSTON.Avvio()
@@ -36,7 +41,6 @@ def run_hub():
     buttonVision.grid(row=0, column=2)
 
 
-    
     root.mainloop()
     
 
