@@ -1,7 +1,7 @@
 <annotation>
 	<folder>rock</folder>
-	<filename>rock01.jpeg</filename>
-	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/rock/rock01.jpeg</path>
+	<filename>rock09.jpeg</filename>
+	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/rock/rock09.jpeg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>90</xmin>
-			<ymin>481</ymin>
-			<xmax>635</xmax>
-			<ymax>766</ymax>
+			<xmin>49</xmin>
+			<ymin>434</ymin>
+			<xmax>703</xmax>
+			<ymax>649</ymax>
 		</bndbox>
 	</object>
 </annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>fck</folder>
+	<filename>fck10.jpeg</filename>
+	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/fck/fck10.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>721</width>
+		<height>1600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fck</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>101</xmin>
+			<ymin>551</ymin>
+			<xmax>294</xmax>
+			<ymax>878</ymax>
+		</bndbox>
+	</object>
+</annotation>

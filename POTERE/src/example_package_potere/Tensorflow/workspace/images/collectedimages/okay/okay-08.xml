@@ -1,0 +1,26 @@
+<annotation>
+	<folder>okay</folder>
+	<filename>okay-08.jpeg</filename>
+	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/okay/okay-08.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>721</width>
+		<height>1600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>okay</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>113</xmin>
+			<ymin>506</ymin>
+			<xmax>315</xmax>
+			<ymax>914</ymax>
+		</bndbox>
+	</object>
+</annotation>

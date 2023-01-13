@@ -1,0 +1,26 @@
+<annotation>
+	<folder>grazie</folder>
+	<filename>grazie02.jpeg</filename>
+	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/grazie/grazie02.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>721</width>
+		<height>1600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>grazie</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>128</xmin>
+			<ymin>615</ymin>
+			<xmax>605</xmax>
+			<ymax>831</ymax>
+		</bndbox>
+	</object>
+</annotation>

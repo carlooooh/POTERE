@@ -1,7 +1,7 @@
 <annotation>
-	<folder>rock</folder>
-	<filename>rock02.jpeg</filename>
-	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/rock/rock02.jpeg</path>
+	<folder>cuore</folder>
+	<filename>cuore01.jpeg</filename>
+	<path>/home/lordcarlo/Desktop/POTERE HUB/project_POTERE/POTERE/src/example_package_potere/Tensorflow/workspace/images/collectedimages/cuore/cuore01.jpeg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,15 +12,15 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>rock</name>
+		<name>cuore</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>90</xmin>
-			<ymin>429</ymin>
+			<xmin>130</xmin>
+			<ymin>591</ymin>
 			<xmax>590</xmax>
-			<ymax>717</ymax>
+			<ymax>819</ymax>
 		</bndbox>
 	</object>
 </annotation>
